@@ -1,11 +1,10 @@
 <template>
-  <router-view></router-view>
+	<div>News</div>
 </template>
 
 <script>
-
 export default {
-  name: 'App',
+	name: 'News'
 }
 </script>
 
