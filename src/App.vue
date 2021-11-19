@@ -1,21 +1,28 @@
 <template>
   <div>
-    <NavBar></NavBar>
+    <Header></Header>
     <router-view v-slot="{Component}">
-      <transition name=slide>
+      <transition name="fade">
         <component :is="Component"></component>
       </transition>
     </router-view>
+    <Spinner :loading="loadingStatus"></Spinner>
   </div>
 </template>
 
 <script>
-  import NavBar from '@/components/NavBar.vue'
+  import Header from '@/components/Header.vue'
+  import Spinner from '@/components/Spinner.vue'
+  import { mapGetters } from 'vuex'
 
   export default {
     name: 'App',
+    computed: {
+      ...mapGetters(['loadingStatus'])
+    },
     components: {
-      NavBar
+      Header,
+      Spinner
     }
   }
 </script>
@@ -30,7 +37,7 @@
 
   a {
     color: black;
-    /* text-decoration: none; */
+    text-decoration: none;
   }
 
   button {
@@ -53,14 +60,16 @@
   }
 
   body {
+    font-family: 'Noto Sans KR', sans-serif;
     font-size: 2rem;
+    font-weight: 400;
   }
 
-  .slide-enter-from {
+  .fade-leave-to {
     opacity: 0;
   }
 
-  .slide-enter-active {
+  .fade-leave-active {
     transition: 1s;
   }
 </style>

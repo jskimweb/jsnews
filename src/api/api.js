@@ -24,10 +24,15 @@ function getItem(itemId) {
 	return axios.get(`${config.baseUrl}item/${itemId}.json`);
 }
 
+function getList(pageName) {
+	return axios.get(`${config.baseUrl}${pageName}/1.json`);
+}
+
 export {
 	getNewsList,
 	getAskList,
 	getJobsList,
 	getUserInfo,
-	getItem
+	getItem,
+	getList
 }

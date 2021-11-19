@@ -1,9 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import News from '@/views/News.vue'
-import Ask from '@/views/Ask.vue'
-import Jobs from '@/views/Jobs.vue'
-import User from '@/views/User.vue'
-import Item from '@/views/Item.vue'
+import NewsView from '@/views/NewsView.vue'
+import AskView from '@/views/AskView.vue'
+import JobsView from '@/views/JobsView.vue'
+import UserView from '@/views/UserView.vue'
+import AskItemView from '@/views/AskItemView.vue'
 
 const router = createRouter({
 	history: createWebHistory(),
@@ -14,23 +14,28 @@ const router = createRouter({
 		},
 		{
 			path: '/news',
-			component: News
+			name: 'news',
+			component: NewsView
 		},
 		{
 			path: '/ask',
-			component: Ask
+			name: 'ask',
+			component: AskView
 		},
 		{
 			path: '/jobs',
-			component: Jobs
+			name: 'jobs',
+			component: JobsView
+		},
+		{
+			path: '/ask/item/:id',
+			name: 'askItem',
+			component: AskItemView
 		},
 		{
 			path: '/user/:id',
-			component: User
-		},
-		{
-			path: '/item/:id',
-			component: Item
+			name: 'user',
+			component: UserView
 		}
 	]
 });

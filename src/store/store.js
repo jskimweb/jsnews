@@ -1,7 +1,7 @@
 import { createStore } from 'vuex'
-import getters from '@/store/getters.js'
-import mutations from '@/store/mutations.js'
-import actions from '@/store/actions.js'
+import getters from './getters.js'
+import mutations from './mutations.js'
+import actions from './actions.js'
 
 const store = createStore({
 	state: {
@@ -9,7 +9,9 @@ const store = createStore({
 		askList: [],
 		jobsList: [],
 		userInfo: {},
-		item: []
+		item: {},
+		loadingStatus: false,
+		list: []
 	},
 	getters,
 	mutations,

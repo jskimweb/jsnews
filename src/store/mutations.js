@@ -13,5 +13,14 @@ export default {
 	},
 	SET_ITEM(state, payload) {
 		state.item = payload;
+	},
+	startSpinner(state) {
+		state.loadingStatus = true;
+	},
+	endSpinner(state) {
+		state.loadingStatus = false;
+	},
+	SET_LIST(state, payload) {
+		state.list = payload;
 	}
 }

@@ -3,7 +3,8 @@ import {
 	getAskList,
 	getJobsList,
 	getUserInfo,
-	getItem
+	getItem,
+	getList
 } from '@/api/api.js'
 
 export default {
@@ -56,5 +57,10 @@ export default {
 			.catch(error => {
 				console.log(error);
 			})
+	},
+	GET_LIST({ commit }, pageName) {
+		getList(pageName)
+			.then(({ data }) => commit('SET_LIST', data))
+			.catch(error => console.log(error));
 	}
 }

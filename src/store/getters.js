@@ -13,5 +13,11 @@ export default {
 	},
 	item(state) {
 		return state.item
+	},
+	loadingStatus(state) {
+		return state.loadingStatus
+	},
+	list(state) {
+		return state.list
 	}
 }
