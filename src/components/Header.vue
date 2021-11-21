@@ -1,7 +1,8 @@
 <template>
 	<div class="header">
+		<h1 class="header__tit">Vue News</h1>
 		<router-link to="/news">News</router-link>
-		<router-link :class="{'color-active': active === true}" to="/ask">Ask</router-link>
+		<router-link :class="{'color-active': activeMenu === true}" to="/ask">Ask</router-link>
 		<router-link to="/jobs">Jobs</router-link>
 	</div>
 </template>
@@ -15,8 +16,8 @@
 		setup() {
 			const route = useRoute();
 
-			// AskItemPage에서도 Ask 메뉴 포커스 유지
-			let active = computed(() => {
+			// AskItemView에서도 Ask 메뉴 포커스 유지
+			let activeMenu = computed(() => {
 				if(route.name === 'askItem') {
 					return true;
 				} else {
@@ -26,7 +27,7 @@
 
 			return {
 				route,
-				active
+				activeMenu
 			}
 		}
 	}
@@ -34,20 +35,31 @@
 
 <style scoped>
 	.header {
-		height: 5rem;
 		background-color: #34495E;
-		padding: 1rem;
+		padding: 1rem 2rem;
+	}
+
+	.header h1 {
+		color: white;
+		font-size: 3.5rem;
+		line-height: 1;
+		margin-bottom: 2rem;
 	}
 
 	.header a {
 		position: relative;
 		color: white;
 		font-weight: 700;
-		padding-right: 1rem;
-		margin-right: 1rem;
+		padding-right: 2rem;
+		margin-right: 2rem;
 	}
 
-	.header a:after {
+	.header a:last-child{
+		padding-right: 0;
+		margin-right: 0;
+	}
+
+	.header a::after {
 		content: '';
 		position: absolute;
 		right: 0;
@@ -58,7 +70,7 @@
 		background-color: #ccc;
 	}
 
-	.header a:last-child::after{
+	.header a:last-child::after {
 		display: none;
 	}
 

@@ -16,8 +16,5 @@ export default {
 	},
 	loadingStatus(state) {
 		return state.loadingStatus
-	},
-	list(state) {
-		return state.list
 	}
 }

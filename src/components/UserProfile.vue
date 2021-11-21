@@ -12,16 +12,8 @@
 </template>
 
 <script>
-	// import { mapGetters } from 'vuex'
-
 	export default {
-		name: 'UserProfile',
-		// computed: {
-		// 	...mapGetters(['item'])
-		// }
-		props: {
-			item: Object
-		}
+		name: 'UserProfile'
 	}
 </script>
 

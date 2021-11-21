@@ -3,64 +3,38 @@ import {
 	getAskList,
 	getJobsList,
 	getUserInfo,
-	getItem,
-	getList
+	getItem
 } from '@/api/api.js'
 
 export default {
-	GET_NEWS({ commit }) {
-		getNewsList()
-			.then(({ data }) => {
-				console.log(data);
-				commit('SET_NEWS', data);
-			})
-			.catch(error => {
-				console.log(error);
-			});
+	async GET_NEWS({ commit }) {
+		const response = await getNewsList();
+		console.log(response.data);
+		commit('SET_NEWS', response.data);
+		return response;
 	},
-	GET_ASK({	commit }) {
-		getAskList()
-			.then(({ data }) => {
-				console.log(data);
-				commit('SET_ASK', data);
-			})
-			.catch(error => {
-				console.log(error);
-			});
+	async GET_ASK({ commit }) {
+		const response = await getAskList();
+		console.log(response.data);
+		commit('SET_ASK', response.data);
+		return response;
 	},
-	GET_JOBS({ commit }) {
-		getJobsList()
-			.then(({ data }) => {
-				console.log(data);
-				commit('SET_JOBS', data);
-			})
-			.catch(error => {
-				console.log(error);
-			});
+	async GET_JOBS({ commit }) {
+		const response = await getJobsList();
+		console.log(response.data);
+		commit('SET_JOBS', response.data);
+		return response;
 	},
-	GET_USER({ commit }, userName) {
-		getUserInfo(userName)
-			.then(({ data }) => {
-				console.log(data);
-				commit('SET_USER', data);
-			})
-			.catch(error => {
-				console.log(error);
-			})
+	async GET_USER({ commit }, userName) {
+		const response = await getUserInfo(userName);
+		console.log(response.data);
+		commit('SET_USER', response.data);
+		return response;
 	},
-	GET_ITEM({ commit }, itemId) {
-		getItem(itemId)
-			.then(({ data }) => {
-				console.log(data);
-				commit('SET_ITEM', data);
-			})
-			.catch(error => {
-				console.log(error);
-			})
-	},
-	GET_LIST({ commit }, pageName) {
-		getList(pageName)
-			.then(({ data }) => commit('SET_LIST', data))
-			.catch(error => console.log(error));
+	async GET_ITEM({ commit }, itemId) {
+		const response = await getItem(itemId);
+		console.log(response.data);
+		commit('SET_ITEM', response.data);
+		return response;
 	}
 }

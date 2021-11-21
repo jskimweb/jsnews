@@ -10,8 +10,7 @@ const store = createStore({
 		jobsList: [],
 		userInfo: {},
 		item: {},
-		loadingStatus: false,
-		list: []
+		loadingStatus: false
 	},
 	getters,
 	mutations,

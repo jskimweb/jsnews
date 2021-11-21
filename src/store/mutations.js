@@ -19,8 +19,5 @@ export default {
 	},
 	endSpinner(state) {
 		state.loadingStatus = false;
-	},
-	SET_LIST(state, payload) {
-		state.list = payload;
 	}
 }

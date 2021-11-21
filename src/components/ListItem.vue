@@ -42,7 +42,6 @@
 		},
 		computed: {
 			...mapGetters(['newsList', 'askList', 'jobsList']),
-			// ...mapGetters(['list']),
 			List () {
 				if (this.route.name === 'news') {
 					return this.newsList
@@ -53,7 +52,6 @@
 				} else {
 					return false
 				}
-				// return this.list;
 			}
 		}
 	}
@@ -70,7 +68,7 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		width: 10rem;
+		min-width: 10rem;
 		height: 8rem;
 		font-weight: 500;
 		color: #41b883;

@@ -20,36 +20,13 @@
 </template>
 
 <script>
-	import { useRoute	} from 'vue-router'
-	import { mapGetters, useStore	} from 'vuex';
+	import { mapGetters	} from 'vuex';
 	import UserProfile from '@/components/UserProfile.vue'
 
 	export default {
 		name: 'AskItemView',
 		computed: {
 			...mapGetters(['item'])
-		},
-		setup() {
-			const route = useRoute();
-			const store = useStore();
-			const itemId = route.params.id;
-			
-			store.commit('startSpinner');
-			setTimeout(() => {
-				store.dispatch('GET_ITEM', itemId)
-					.then(() => {
-						store.commit('endSpinner');
-					})
-					.catch(error => {
-						console.log(error);
-					});
-			}, 1000);
-
-			return {
-				route,
-				store,
-				itemId
-			}
 		},
 		components: {
 			UserProfile

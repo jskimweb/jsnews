@@ -65,11 +65,11 @@
     font-weight: 400;
   }
 
-  .fade-leave-to {
+  .fade-enter-from {
     opacity: 0;
   }
 
-  .fade-leave-active {
-    transition: 1s;
+  .fade-enter-active {
+    transition: .5s;
   }
 </style>
