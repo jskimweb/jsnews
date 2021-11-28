@@ -1,6 +1,6 @@
 <template>
 	<div class="header">
-		<h1 class="header__tit">Vue News</h1>
+		<h1 class="header__tit">JS News</h1>
 		<router-link to="/news">News</router-link>
 		<router-link :class="{'color-active': activeMenu === true}" to="/ask">Ask</router-link>
 		<router-link to="/jobs">Jobs</router-link>

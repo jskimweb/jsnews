@@ -1,5 +1,5 @@
 <template>
-	<div class="ask">
+	<div>
 		<UserProfile :item="item">
 			<!-- 유저명 -->
 			<template v-slot:username>
@@ -14,8 +14,10 @@
 			</template>
 		</UserProfile>
 
-		<h2 class="ask__title">{{ item.title }} </h2>
-		<div class="ask__content" v-html="item.content"></div>
+		<div class="ask">
+			<h2 class="ask__title">{{ item.title }} </h2>
+			<div class="ask__content" v-html="item.content"></div>
+		</div>
 	</div>
 </template>
 
@@ -38,6 +40,10 @@
 	.user__name:hover {
 		text-decoration: underline;
 		color: #34495E;
+	}
+
+	.ask {
+		padding: 0 2rem;
 	}
 
 	.ask .ask__title,
